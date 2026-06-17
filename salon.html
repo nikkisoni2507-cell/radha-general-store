@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Radiant Beauty Salon | Expert Hair, Makeup & Skincare in Jaipur</title>
+<meta name="description" content="Professional women's beauty salon in Mansarovar, Jaipur. Expert haircuts, treatments, facials, bridal makeup & skincare. Trained by Orane Academy.">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+:root{
+--pink:#ff1493;
+--light-pink:#ffb6c1;
+--gold:#ffd700;
+--white:#ffffff;
+--dark:#1a1a1a;
+--gray:#666;
+--green:#25D366;
+}
+
+body{
+background:white;
+color:var(--gray);
+overflow-x:hidden;
+}
+
+header{
+position:fixed;
+top:0;
+width:100%;
+background:rgba(255,255,255,0.98);
+padding:15px 7%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+box-shadow:0 2px 25px rgba(255,20,147,0.15);
+z-index:999;
+backdrop-filter:blur(10px);
+}
+
+.logo{
+font-size:28px;
+font-weight:800;
+background:linear-gradient(135deg, var(--pink) 0%, #ff69b4 100%);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+background-clip:text;
+display:flex;
+align-items:center;
+gap:8px;
+}
+
+.logo i{
+font-size:32px;
+color:var(--pink);
+}
+
+nav a{
+text-decoration:none;
+margin-left:25px;
+color:#333;
+font-weight:600;
+transition:0.3s;
+position:relative;
+}
+
+nav a:hover{
+color:var(--pink);
+}
+
+nav a::after{
+content:'';
+position:absolute;
+bottom:-5px;
+left:0;
+width:0;
+height:2px;
+background:var(--pink);
+transition:width 0.3s;
+}
+
+nav a:hover::after{
+width:100%;
+}
+
+.hero{
+height:100vh;
+position:relative;
+background:
+linear-gradient(135deg, rgba(255,20,147,0.65) 0%, rgba(255,182,193,0.5) 100%),
+url('https://images.unsplash.com/photo-1552820728-8ac41f1ce891?auto=format&fit=crop&w=1600&q=80');
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+overflow:hidden;
+}
+
+.overlay{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:radial-gradient(circle at 30% 50%, rgba(255,182,193,0.3) 0%, rgba(0,0,0,.6) 100%);
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+max-width:900px;
+padding:20px;
+color:white;
+animation:slideDown 0.8s ease-out;
+}
+
+@keyframes slideDown{
+from{
+opacity:0;
+transform:translateY(-30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.tagline{
+display:inline-block;
+background:var(--light-pink);
+padding:12px 25px;
+border-radius:30px;
+font-weight:700;
+margin-bottom:25px;
+color:#000;
+font-size:14px;
+letter-spacing:0.5px;
+box-shadow:0 5px 15px rgba(255,182,193,0.4);
+}
+
+.hero h1{
+font-size:72px;
+font-weight:800;
+line-height:1.1;
+margin-bottom:15px;
+text-shadow:
+0 0 30px rgba(255,182,193,0.8),
+0 0 60px rgba(255,20,147,0.5),
+2px 2px 4px rgba(0,0,0,0.3);
+letter-spacing:-1px;
+}
+
+.hero p{
+font-size:20px;
+margin-bottom:35px;
+line-height:1.8;
+text-shadow:1px 1px 3px rgba(0,0,0,0.3);
+font-weight:500;
+}
+
+.hero-buttons{
+display:flex;
+gap:20px;
+justify-content:center;
+flex-wrap:wrap;
+}
+
+.btn-book,
+.btn-whatsapp{
+padding:16px 40px;
+border-radius:50px;
+text-decoration:none;
+font-weight:700;
+transition:0.3s;
+border:2px solid transparent;
+cursor:pointer;
+font-size:16px;
+display:inline-block;
+}
+
+.btn-book{
+background:var(--gold);
+color:#000;
+border-color:var(--gold);
+box-shadow:0 8px 25px rgba(255,215,0,0.4);
+}
+
+.btn-book:hover{
+transform:translateY(-3px);
+box-shadow:0 12px 35px rgba(255,215,0,0.6);
+background:white;
+}
+
+.btn-whatsapp{
+background:var(--green);
+color:white;
+border-color:var(--green);
+box-shadow:0 8px 25px rgba(37,211,102,0.4);
+}
+
+.btn-whatsapp:hover{
+transform:translateY(-3px);
+box-shadow:0 12px 35px rgba(37,211,102,0.6);
+}
+
+.services{
+padding:90px 8%;
+background:linear-gradient(135deg, #fff5f7 0%, #fffbf0 100%);
+}
+
+.section-title{
+text-align:center;
+font-size:48px;
+color:var(--pink);
+margin-bottom:20px;
+position:relative;
+}
+
+.section-title::after{
+content:'';
+width:80px;
+height:4px;
+background:linear-gradient(90deg, var(--pink) 0%, var(--light-pink) 100%);
+position:absolute;
+bottom:-15px;
+left:50%;
+transform:translateX(-50%);
+border-radius:2px;
+}
+
+.section-subtitle{
+text-align:center;
+font-size:18px;
+color:var(--gray);
+margin-bottom:60px;
+}
+
+.services-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.service-card{
+background:white;
+padding:40px 30px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 8px 30px rgba(255,20,147,0.1);
+transition:0.3s;
+border:2px solid transparent;
+}
+
+.service-card:hover{
+transform:translateY(-8px);
+border-color:var(--pink);
+box-shadow:0 15px 50px rgba(255,20,147,0.2);
+}
+
+.service-icon{
+font-size:48px;
+margin-bottom:20px;
+color:var(--pink);
+}
+
+.service-card h3{
+color:var(--pink);
+font-size:22px;
+margin-bottom:15px;
+}
+
+.service-card p{
+color:var(--gray);
+line-height:1.6;
+}
+
+.gallery{
+padding:90px 8%;
+background:white;
+}
+
+.gallery-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.gallery-item{
+position:relative;
+height:280px;
+border-radius:18px;
+overflow:hidden;
+box-shadow:0 8px 25px rgba(0,0,0,0.15);
+transition:0.3s;
+cursor:pointer;
+}
+
+.gallery-item:hover{
+transform:scale(1.05);
+box-shadow:0 15px 40px rgba(255,20,147,0.25);
+}
+
+.gallery-item img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.gallery-overlay{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(255,20,147,0.85);
+display:flex;
+align-items:center;
+justify-content:center;
+opacity:0;
+transition:0.3s;
+color:white;
+font-weight:700;
+font-size:18px;
+text-align:center;
+padding:20px;
+}
+
+.gallery-item:hover .gallery-overlay{
+opacity:1;
+}
+
+.testimonials{
+padding:90px 8%;
+background:linear-gradient(135deg, #ffe4e1 0%, #fff0f5 100%);
+}
+
+.testimonial-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+}
+
+.testimonial-card{
+background:white;
+padding:35px;
+border-radius:18px;
+box-shadow:0 8px 25px rgba(0,0,0,0.1);
+transition:0.3s;
+border-left:5px solid var(--pink);
+}
+
+.testimonial-card:hover{
+transform:translateY(-5px);
+box-shadow:0 12px 35px rgba(255,20,147,0.2);
+}
+
+.stars{
+color:var(--gold);
+font-size:18px;
+margin-bottom:15px;
+}
+
+.testimonial-text{
+color:var(--gray);
+line-height:1.8;
+margin-bottom:20px;
+font-style:italic;
+}
+
+.testimonial-author{
+color:var(--pink);
+font-weight:700;
+font-size:16px;
+}
+
+.cta-section{
+padding:80px 8%;
+background:linear-gradient(135deg, var(--pink) 0%, #ff69b4 100%);
+text-align:center;
+color:white;
+}
+
+.cta-section h2{
+font-size:48px;
+margin-bottom:20px;
+text-shadow:2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.cta-section p{
+font-size:20px;
+margin-bottom:40px;
+color:rgba(255,255,255,0.95);
+}
+
+.cta-buttons{
+display:flex;
+gap:20px;
+justify-content:center;
+flex-wrap:wrap;
+}
+
+.cta-btn{
+padding:16px 40px;
+border-radius:50px;
+text-decoration:none;
+font-weight:700;
+transition:0.3s;
+border:2px solid white;
+cursor:pointer;
+font-size:16px;
+}
+
+.cta-btn-primary{
+background:var(--gold);
+color:#000;
+}
+
+.cta-btn-primary:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 30px rgba(255,215,0,0.5);
+}
+
+.cta-btn-secondary{
+background:transparent;
+color:white;
+}
+
+.cta-btn-secondary:hover{
+background:white;
+color:var(--pink);
+}
+
+.contact{
+padding:90px 8%;
+background:white;
+}
+
+.contact-content{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+}
+
+.contact-info{
+margin-bottom:30px;
+}
+
+.contact-info h3{
+color:var(--pink);
+font-size:20px;
+margin-bottom:10px;
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.contact-info p{
+color:var(--gray);
+line-height:1.8;
+font-size:16px;
+}
+
+.contact-form{
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+.form-group{
+display:flex;
+flex-direction:column;
+}
+
+.form-group label{
+color:var(--pink);
+font-weight:600;
+margin-bottom:8px;
+}
+
+.form-group input,
+.form-group textarea{
+padding:12px 15px;
+border:2px solid var(--light-pink);
+border-radius:10px;
+font-family:'Poppins',sans-serif;
+transition:0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus{
+outline:none;
+border-color:var(--pink);
+box-shadow:0 0 10px rgba(255,20,147,0.2);
+}
+
+.submit-btn{
+background:var(--pink);
+color:white;
+padding:14px 30px;
+border:none;
+border-radius:10px;
+font-weight:700;
+cursor:pointer;
+transition:0.3s;
+font-size:16px;
+}
+
+.submit-btn:hover{
+background:#ff0080;
+transform:translateY(-2px);
+}
+
+footer{
+background:var(--dark);
+color:white;
+text-align:center;
+padding:30px 20px;
+font-size:14px;
+}
+
+.whatsapp-float{
+position:fixed;
+right:20px;
+bottom:20px;
+background:linear-gradient(135deg, var(--green) 0%, #128C7E 100%);
+color:white;
+padding:16px 22px;
+border-radius:50px;
+font-weight:700;
+cursor:pointer;
+box-shadow:0 5px 25px rgba(37,211,102,0.4);
+z-index:999;
+transition:0.3s;
+border:2px solid white;
+text-decoration:none;
+display:flex;
+align-items:center;
+gap:8px;
+}
+
+.whatsapp-float:hover{
+transform:scale(1.1);
+box-shadow:0 10px 35px rgba(37,211,102,0.6);
+}
+
+.fade-in{
+opacity:0;
+transform:translateY(20px);
+transition:opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible{
+opacity:1;
+transform:translateY(0);
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:48px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+.hero-buttons{
+flex-direction:column;
+gap:15px;
+}
+
+.btn-book,
+.btn-whatsapp{
+width:100%;
+}
+
+nav{
+display:none;
+}
+
+header{
+padding:12px 5%;
+}
+
+.logo{
+font-size:22px;
+}
+
+.section-title{
+font-size:36px;
+}
+
+.contact-content{
+grid-template-columns:1fr;
+gap:40px;
+}
+
+}
+
+</style>
+
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"BeautySalon",
+"name":"Radiant Beauty Salon",
+"description":"Professional women's beauty salon with expert services",
+"telephone":"+919664164936",
+"url":"https://nikkisoni2507-cell.github.io/radha-general-store/salon.html",
+"address":{
+"@type":"PostalAddress",
+"streetAddress":"Mansarovar",
+"addressLocality":"Jaipur",
+"addressRegion":"Rajasthan",
+"addressCountry":"IN"
+},
+"priceRange":"₹₹"
+}
+</script>
+
+</head>
+
+<body>
+
+<header>
+<div class="logo"><i class="fas fa-spa"></i> Radiant Beauty</div>
+
+<nav>
+<a href="#services">Services</a>
+<a href="#gallery">Gallery</a>
+<a href="#testimonials">Reviews</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<section class="hero">
+<div class="overlay"></div>
+
+<div class="hero-content">
+<span class="tagline">
+✨ Professional Women's Beauty Salon Since 2019
+</span>
+
+<h1>
+Transform Your Beauty<br>
+With Confidence & Glow
+</h1>
+
+<p>
+Professionally trained by Orane Academy. Expert Haircuts, Hair Treatments, Facials, Bridal Makeup & Premium Skin Care Services in Mansarovar, Jaipur.
+</p>
+
+<div class="hero-buttons">
+<a href="tel:+919664164936" class="btn-book">
+📞 Book Appointment
+</a>
+
+<a href="https://wa.me/919664164936" class="btn-whatsapp">
+💬 WhatsApp Now
+</a>
+</div>
+</div>
+</section>
+
+<section class="services" id="services">
+
+<h2 class="section-title">Our Premium Services</h2>
+<p class="section-subtitle">Professional beauty solutions tailored for you</p>
+
+<div class="services-grid">
+
+<div class="service-card fade-in">
+<div class="service-icon">✂️</div>
+<h3>Expert Haircuts & Styling</h3>
+<p>Trendy cuts, layers, and personalized styling for all hair types. Professional color treatments and hair care.</p>
+</div>
+
+<div class="service-card fade-in">
+<div class="service-icon">💆</div>
+<h3>Hair Treatments & Spa</h3>
+<p>Keratin treatments, deep conditioning, hair spa, and scalp care. Restore your hair's natural shine and strength.</p>
+</div>
+
+<div class="service-card fade-in">
+<div class="service-icon">✨</div>
+<h3>Facial & Skincare</h3>
+<p>Hydrating facials, anti-aging treatments, acne care, and premium skincare services using quality products.</p>
+</div>
+
+<div class="service-card fade-in">
+<div class="service-icon">💄</div>
+<h3>Bridal Makeup</h3>
+<p>Complete bridal packages including makeup, hairstyling, and pre-bridal treatments for your special day.</p>
+</div>
+
+<div class="service-card fade-in">
+<div class="service-icon">💅</div>
+<h3>Nail Care & Art</h3>
+<p>Professional manicure, pedicure, nail extensions, and artistic nail designs with premium products.</p>
+</div>
+
+<div class="service-card fade-in">
+<div class="service-icon">🌿</div>
+<h3>Wellness & Relaxation</h3>
+<p>Head & shoulder massage, aromatherapy, and relaxation treatments for complete stress relief.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="gallery" id="gallery">
+
+<h2 class="section-title">Salon Showcase</h2>
+<p class="section-subtitle">See our professional salon and beautiful transformations</p>
+
+<div class="gallery-grid">
+
+<div class="gallery-item fade-in">
+<img src="https://images.unsplash.com/photo-1560066169-b279a6a4ac12?auto=format&fit=crop&w=600&q=80" alt="Professional Salon Interior">
+<div class="gallery-overlay">Professional Salon Setup</div>
+</div>
+
+<div class="gallery-item fade-in">
+<img src="https://images.unsplash.com/photo-1522335617519-bcc009c2445d?auto=format&fit=crop&w=600&q=80" alt="Bridal Makeup">
+<div class="gallery-overlay">Bridal Makeup Artistry</div>
+</div>
+
+<div class="gallery-item fade-in">
+<img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=600&q=80" alt="Hair Styling">
+<div class="gallery-overlay">Expert Hair Styling</div>
+</div>
+
+<div class="gallery-item fade-in">
+<img src="https://images.unsplash.com/photo-1552820728-8ac41f1ce891?auto=format&fit=crop&w=600&q=80" alt="Facial Treatment">
+<div class="gallery-overlay">Premium Facials</div>
+</div>
+
+<div class="gallery-item fade-in">
+<img src="https://images.unsplash.com/photo-1570545254392-0e86e8ba9b00?auto=format&fit=crop&w=600&q=80" alt="Nail Art">
+<div class="gallery-overlay">Nail Art Designs</div>
+</div>
+
+<div class="gallery-item fade-in">
+<img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=600&q=80" alt="Beauty Treatment">
+<div class="gallery-overlay">Luxury Beauty Treatments</div>
+</div>
+
+</div>
+
+</section>
+
+<section class="testimonials" id="testimonials">
+
+<h2 class="section-title">Happy Customers</h2>
+<p class="section-subtitle">Real reviews from our satisfied clients</p>
+
+<div class="testimonial-grid">
+
+<div class="testimonial-card fade-in">
+<div class="stars">⭐⭐⭐⭐⭐</div>
+<p class="testimonial-text">"The bridal makeup was absolutely perfect! The staff was so professional and made me feel beautiful on my special day. Highly recommended!"</p>
+<p class="testimonial-author">- Priya Sharma</p>
+</div>
+
+<div class="testimonial-card fade-in">
+<div class="stars">⭐⭐⭐⭐⭐</div>
+<p class="testimonial-text">"Best salon in Mansarovar! The hair treatment gave my damaged hair new life. The staff is trained and very attentive to details."</p>
+<p class="testimonial-author">- Anjali Verma</p>
+</div>
+
+<div class="testimonial-card fade-in">
+<div class="stars">⭐⭐⭐⭐⭐</div>
+<p class="testimonial-text">"I've been visiting for facials for 2 years now. The results are amazing and they use only quality products. Worth every penny!"</p>
+<p class="testimonial-author">- Neha Gupta</p>
+</div>
+
+<div class="testimonial-card fade-in">
+<div class="stars">⭐⭐⭐⭐⭐</div>
+<p class="testimonial-text">"Their stylists are incredibly talented. My new haircut and color look absolutely stunning. Customer service is top-notch!"</p>
+<p class="testimonial-author">- Divya Rao</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="cta-section">
+
+<h2>Ready to Transform Your Look?</h2>
+<p>Book your appointment today and experience our professional beauty services</p>
+
+<div class="cta-buttons">
+<a href="tel:+919664164936" class="cta-btn cta-btn-primary">📞 Call Us Now</a>
+<a href="https://wa.me/919664164936" class="cta-btn cta-btn-secondary">💬 Message on WhatsApp</a>
+</div>
+
+</section>
+
+<section class="contact" id="contact">
+
+<h2 class="section-title">Get In Touch</h2>
+
+<div class="contact-content">
+
+<div>
+<div class="contact-info">
+<h3><i class="fas fa-phone"></i> Phone</h3>
+<p><strong>+91 96641 64936</strong></p>
+<p>Available Mon-Sun, 10 AM - 8 PM</p>
+</div>
+
+<div class="contact-info">
+<h3><i class="fas fa-map-marker-alt"></i> Location</h3>
+<p><strong>Mansarovar, Jaipur</strong></p>
+<p>Rajasthan, India</p>
+</div>
+
+<div class="contact-info">
+<h3><i class="fas fa-clock"></i> Hours</h3>
+<p><strong>Monday - Sunday</strong></p>
+<p>10:00 AM - 8:00 PM</p>
+</div>
+
+<div class="contact-info">
+<h3><i class="fas fa-award"></i> Certification</h3>
+<p><strong>Orane Academy Trained</strong></p>
+<p>Professional Beauty Experts</p>
+</div>
+</div>
+
+<form class="contact-form">
+<div class="form-group">
+<label>Your Name</label>
+<input type="text" placeholder="Enter your name" required>
+</div>
+
+<div class="form-group">
+<label>Email Address</label>
+<input type="email" placeholder="Enter your email" required>
+</div>
+
+<div class="form-group">
+<label>Phone Number</label>
+<input type="tel" placeholder="Enter your phone" required>
+</div>
+
+<div class="form-group">
+<label>Service Required</label>
+<input type="text" placeholder="e.g., Bridal Makeup, Hair Treatment" required>
+</div>
+
+<div class="form-group">
+<label>Message</label>
+<textarea placeholder="Share your requirements" rows="5" required></textarea>
+</div>
+
+<button type="submit" class="submit-btn">Send Inquiry</button>
+</form>
+
+</div>
+
+</section>
+
+<footer>
+<p>© 2026 Radiant Beauty Salon | Professional Women's Beauty Salon in Mansarovar, Jaipur</p>
+<p>Trained by Orane Academy | Excellence in Beauty & Wellness</p>
+</footer>
+
+<a href="https://wa.me/919664164936" class="whatsapp-float">
+<i class="fab fa-whatsapp"></i> Chat
+</a>
+
+<script>
+
+const observerOptions = {
+threshold:0.1,
+rootMargin:'0px 0px -100px 0px'
+};
+
+const observer = new IntersectionObserver(function(entries){
+entries.forEach(entry => {
+if(entry.isIntersecting){
+entry.target.classList.add('visible');
+}
+});
+}, observerOptions);
+
+document.querySelectorAll('.fade-in').forEach(element => {
+observer.observe(element);
+});
+
+</script>
+
+</body>
+</html>
