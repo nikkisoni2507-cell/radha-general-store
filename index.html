@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Radha General Store & Kirana | Grocery Delivery Jaipur</title>
+<meta name="description" content="Order fresh groceries, daily essentials, dairy products, snacks, personal care items and more from Radha General Store. Fast delivery across Jaipur.">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+:root{
+--green:#1E5631;
+--yellow:#FFC300;
+--dark:#1a1a1a;
+--light:#f8f8f8;
+--orange:#FF6B35;
+--red:#E63946;
+}
+
+body{
+background:white;
+color:#333;
+overflow-x:hidden;
+}
+
+header{
+position:fixed;
+top:0;
+width:100%;
+background:rgba(255,255,255,0.98);
+padding:15px 7%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+box-shadow:0 2px 25px rgba(30,86,49,0.15);
+z-index:999;
+backdrop-filter:blur(10px);
+}
+
+.logo{
+font-size:28px;
+font-weight:800;
+color:var(--green);
+display:flex;
+align-items:center;
+gap:8px;
+}
+
+.logo i{
+font-size:32px;
+}
+
+.logo span{
+color:var(--yellow);
+}
+
+nav a{
+text-decoration:none;
+margin-left:25px;
+color:#333;
+font-weight:600;
+transition:0.3s;
+position:relative;
+}
+
+nav a:hover{
+color:var(--green);
+}
+
+nav a::after{
+content:'';
+position:absolute;
+bottom:-5px;
+left:0;
+width:0;
+height:2px;
+background:var(--green);
+transition:width 0.3s;
+}
+
+nav a:hover::after{
+width:100%;
+}
+
+.hero{
+height:100vh;
+background:
+linear-gradient(135deg, rgba(30,86,49,0.7) 0%, rgba(255,195,0,0.5) 100%),
+url('https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1600&q=80');
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+padding:20px;
+margin-top:60px;
+position:relative;
+overflow:hidden;
+}
+
+.hero::before{
+content:'';
+position:absolute;
+top:0;
+left:0;
+right:0;
+bottom:0;
+background:radial-gradient(circle at 20% 50%, rgba(255,195,0,0.1) 0%, transparent 50%);
+pointer-events:none;
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+animation:slideUp 0.8s ease-out;
+}
+
+@keyframes slideUp{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.hero h1{
+font-size:65px;
+font-weight:800;
+margin-bottom:15px;
+text-shadow:2px 2px 8px rgba(0,0,0,0.3);
+}
+
+.hero p{
+font-size:22px;
+margin-bottom:25px;
+text-shadow:1px 1px 4px rgba(0,0,0,0.3);
+}
+
+.btn{
+display:inline-block;
+padding:15px 35px;
+background:var(--yellow);
+color:black;
+text-decoration:none;
+border-radius:40px;
+font-weight:700;
+transition:0.3s;
+border:2px solid var(--yellow);
+cursor:pointer;
+}
+
+.btn:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 30px rgba(255,195,0,0.4);
+background:white;
+color:var(--green);
+}
+
+.btn-secondary{
+background:var(--orange);
+color:white;
+border-color:var(--orange);
+}
+
+.btn-secondary:hover{
+background:white;
+color:var(--orange);
+}
+
+.offer-banner{
+background:linear-gradient(135deg, var(--red) 0%, var(--orange) 100%);
+padding:20px;
+text-align:center;
+font-weight:700;
+font-size:20px;
+color:white;
+position:relative;
+overflow:hidden;
+}
+
+.offer-banner::before{
+content:'🎉';
+animation:bounce 2s infinite;
+margin-right:10px;
+}
+
+@keyframes bounce{
+0%, 100%{ transform:translateY(0); }
+50%{ transform:translateY(-10px); }
+}
+
+.offer-badge{
+display:inline-block;
+background:white;
+color:var(--red);
+padding:8px 15px;
+border-radius:20px;
+margin:0 5px;
+font-weight:800;
+}
+
+.section{
+padding:90px 8%;
+}
+
+.title{
+text-align:center;
+font-size:42px;
+color:var(--green);
+margin-bottom:45px;
+position:relative;
+}
+
+.title::after{
+content:'';
+width:60px;
+height:4px;
+background:var(--yellow);
+position:absolute;
+bottom:-15px;
+left:50%;
+transform:translateX(-50%);
+border-radius:2px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+}
+
+.card{
+background:white;
+border-radius:18px;
+overflow:hidden;
+box-shadow:0 8px 20px rgba(0,0,0,0.1);
+transition:0.3s;
+border:2px solid transparent;
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 15px 40px rgba(30,86,49,0.2);
+border-color:var(--yellow);
+}
+
+.card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.card-content{
+padding:20px;
+}
+
+.card h3{
+color:var(--green);
+margin-bottom:10px;
+font-size:18px;
+}
+
+.card p{
+color:#666;
+font-size:14px;
+line-height:1.6;
+}
+
+.features{
+background:linear-gradient(135deg, #f5fff6 0%, #fffbf0 100%);
+}
+
+.feature-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.feature{
+background:white;
+padding:30px;
+text-align:center;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
+transition:0.3s;
+border-left:4px solid var(--green);
+}
+
+.feature:hover{
+transform:translateY(-5px);
+box-shadow:0 10px 30px rgba(0,0,0,0.15);
+}
+
+.feature h3{
+font-size:20px;
+color:var(--green);
+margin:10px 0;
+}
+
+.best-products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.product{
+background:white;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+transition:0.3s;
+position:relative;
+}
+
+.product:hover{
+transform:translateY(-8px);
+box-shadow:0 15px 40px rgba(0,0,0,0.2);
+}
+
+.product-badge{
+position:absolute;
+top:10px;
+right:10px;
+background:var(--red);
+color:white;
+padding:8px 12px;
+border-radius:20px;
+font-weight:700;
+font-size:12px;
+z-index:10;
+}
+
+.product img{
+width:100%;
+height:200px;
+object-fit:cover;
+}
+
+.product-body{
+padding:15px;
+}
+
+.product-body h3{
+color:var(--green);
+margin-bottom:8px;
+}
+
+.price{
+font-weight:700;
+font-size:18px;
+color:var(--green);
+}
+
+.old{
+text-decoration:line-through;
+color:#999;
+margin-left:10px;
+font-size:14px;
+}
+
+.discount-percent{
+color:var(--red);
+margin-left:10px;
+font-weight:700;
+}
+
+.review{
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
+border-left:4px solid var(--yellow);
+transition:0.3s;
+}
+
+.review:hover{
+transform:translateY(-5px);
+box-shadow:0 10px 30px rgba(0,0,0,0.15);
+}
+
+.stars{
+color:var(--yellow);
+font-size:16px;
+margin-bottom:10px;
+}
+
+.review p{
+font-style:italic;
+color:#666;
+margin:15px 0;
+}
+
+.review h4{
+color:var(--green);
+margin-top:10px;
+}
+
+.reviews{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
+}
+
+.contact{
+background:linear-gradient(135deg, var(--green) 0%, #2d7d4d 100%);
+color:white;
+position:relative;
+overflow:hidden;
+}
+
+.contact::before{
+content:'';
+position:absolute;
+top:0;
+right:0;
+width:300px;
+height:300px;
+background:rgba(255,195,0,0.1);
+border-radius:50%;
+}
+
+.contact-box{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
+position:relative;
+z-index:2;
+}
+
+.contact-box h3{
+font-size:20px;
+margin-bottom:15px;
+}
+
+.contact-box p{
+margin:8px 0;
+line-height:1.8;
+}
+
+footer{
+background:#111;
+color:white;
+text-align:center;
+padding:30px 20px;
+font-size:14px;
+}
+
+.whatsapp{
+position:fixed;
+right:20px;
+bottom:20px;
+background:linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+color:white;
+padding:18px 25px;
+border-radius:50px;
+font-weight:700;
+cursor:pointer;
+box-shadow:0 5px 25px rgba(37,211,102,0.4);
+z-index:999;
+transition:0.3s;
+border:2px solid white;
+}
+
+.whatsapp:hover{
+transform:scale(1.1);
+box-shadow:0 10px 35px rgba(37,211,102,0.6);
+}
+
+/* Scroll animations */
+.fade-in{
+opacity:0;
+transform:translateY(20px);
+transition:opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible{
+opacity:1;
+transform:translateY(0);
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:40px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+nav{
+display:none;
+}
+
+header{
+padding:12px 5%;
+}
+
+.logo{
+font-size:22px;
+}
+
+.section{
+padding:60px 5%;
+}
+
+.title{
+font-size:32px;
+}
+
+}
+
+</style>
+
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"GroceryStore",
+"name":"Radha Kirana & General Store",
+"url":"https://radhageneralstorejaipur.com",
+"telephone":"+919660985841",
+"address":{
+"@type":"PostalAddress",
+"streetAddress":"Shop No. 4, Main Market Road, Bhankrota",
+"addressLocality":"Jaipur",
+"addressRegion":"Rajasthan",
+"postalCode":"302026",
+"addressCountry":"IN"
+}
+}
+</script>
+
+</head>
+
+<body>
+
+<header>
+<div class="logo"><i class="fas fa-shopping-bag"></i> Radha<span>Store</span></div>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#categories">Categories</a>
+<a href="#products">Products</a>
+<a href="#reviews">Reviews</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<h1>🥬 Fresh Groceries Delivered To Your Doorstep</h1>
+
+<p>✨ Fast Delivery Across Jaipur • Best Prices • Fresh Products Daily</p>
+
+<a href="#" onclick="redirectToWhatsApp()" class="btn">📲 Order On WhatsApp</a>
+
+</div>
+
+</section>
+
+<div class="offer-banner">
+<span class="offer-badge">FLAT 20% OFF</span>
+<span class="offer-badge">+ FREE DELIVERY</span>
+<span class="offer-badge">ON FIRST ORDER</span>
+<p style="margin-top: 10px;">Min. Order ₹499 | Valid For All New Customers</p>
+</div>
+
+<section class="section" id="categories">
+
+<h2 class="title">Shop By Categories</h2>
+
+<div class="cards">
+
+<div class="card fade-in">
+<img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=800&q=80" alt="Daily Staples">
+<div class="card-content">
+<h3>🌾 Daily Staples & Kirana</h3>
+<p>Atta, Rice, Dal, Oil, Salt and daily household essentials at unbeatable prices.</p>
+</div>
+</div>
+
+<div class="card fade-in">
+<img src="https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&fit=crop&w=800&q=80" alt="Snacks">
+<div class="card-content">
+<h3>🍿 Snacks & Packaged Foods</h3>
+<p>Biscuits, Namkeen, Maggi, Butter and ready-to-eat products for your family.</p>
+</div>
+</div>
+
+<div class="card fade-in">
+<img src="https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=800&q=80" alt="Dairy">
+<div class="card-content">
+<h3>🥛 Fresh Dairy Products</h3>
+<p>Fresh milk, curd, paneer, bread, butter and all daily dairy needs.</p>
+</div>
+</div>
+
+<div class="card fade-in">
+<img src="https://images.unsplash.com/photo-1583947582886-f40ec95dd752?auto=format&fit=crop&w=800&q=80" alt="Personal Care">
+<div class="card-content">
+<h3>🧴 Personal Care & Cleaning</h3>
+<p>Dettol, Surf Excel, Ariel, Vim and complete hygiene essentials.</p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<section class="section features">
+
+<h2 class="title">Why Customers Choose Us</h2>
+
+<div class="feature-grid">
+
+<div class="feature fade-in">
+<h3>🚚 Same Day Delivery</h3>
+<p>Fast and reliable delivery across Jaipur within 2-4 hours.</p>
+</div>
+
+<div class="feature fade-in">
+<h3>🥬 Always Fresh</h3>
+<p>Fresh stock updated daily with quality guarantee.</p>
+</div>
+
+<div class="feature fade-in">
+<h3>💳 Easy Payments</h3>
+<p>UPI, COD, Credit/Debit Cards & Digital Wallets accepted.</p>
+</div>
+
+<div class="feature fade-in">
+<h3>⭐ Trusted Since 2020</h3>
+<p>Serving 5000+ families with quality groceries daily.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="products">
+
+<h2 class="title">Best Selling Products</h2>
+
+<div class="best-products">
+
+<div class="product fade-in">
+<div class="product-badge">-18%</div>
+<img src="https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&fit=crop&w=800&q=80" alt="Maggi">
+<div class="product-body">
+<h3>Maggi Noodles Family Pack</h3>
+<p class="price">₹45 <span class="old">₹55</span> <span class="discount-percent">Save ₹10</span></p>
+</div>
+</div>
+
+<div class="product fade-in">
+<div class="product-badge">-11%</div>
+<img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=800&q=80" alt="Rice">
+<div class="product-body">
+<h3>Premium Basmati Rice 1kg</h3>
+<p class="price">₹399 <span class="old">₹449</span> <span class="discount-percent">Save ₹50</span></p>
+</div>
+</div>
+
+<div class="product fade-in">
+<div class="product-badge">-15%</div>
+<img src="https://images.unsplash.com/photo-1628088062854-d1870b4553da?auto=format&fit=crop&w=800&q=80" alt="Butter">
+<div class="product-body">
+<h3>Amul Butter - 500g</h3>
+<p class="price">₹55 <span class="old">₹65</span> <span class="discount-percent">Save ₹10</span></p>
+</div>
+</div>
+
+<div class="product fade-in">
+<div class="product-badge">-14%</div>
+<img src="https://images.unsplash.com/photo-1578916171728-46686eac8d58?auto=format&fit=crop&w=800&q=80" alt="Atta">
+<div class="product-body">
+<h3>Ashirvaad Atta 5kg</h3>
+<p class="price">₹249 <span class="old">₹289</span> <span class="discount-percent">Save ₹40</span></p>
+</div>
+</div>
+
+<div class="product fade-in">
+<div class="product-badge">-20%</div>
+<img src="https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&fit=crop&w=800&q=80" alt="Oil">
+<div class="product-body">
+<h3>Fortune Refined Oil 2L</h3>
+<p class="price">₹299 <span class="old">₹375</span> <span class="discount-percent">Save ₹76</span></p>
+</div>
+</div>
+
+<div class="product fade-in">
+<div class="product-badge">-25%</div>
+<img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=800&q=80" alt="Dal">
+<div class="product-body">
+<h3>Yellow Moong Dal 1kg</h3>
+<p class="price">₹89 <span class="old">₹119</span> <span class="discount-percent">Save ₹30</span></p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="reviews">
+
+<h2 class="title">Customer Reviews & Ratings</h2>
+
+<div class="reviews">
+
+<div class="review fade-in">
+<div class="stars">⭐⭐⭐⭐⭐ 5/5</div>
+<p>"Very fast delivery and excellent quality products. I received my order within 2 hours!"</p>
+<h4>- Rahul Sharma</h4>
+</div>
+
+<div class="review fade-in">
+<div class="stars">⭐⭐⭐⭐⭐ 5/5</div>
+<p>"Best grocery shop in Bhankrota. Fresh products and very affordable prices. Highly recommended!"</p>
+<h4>- Priya Gupta</h4>
+</div>
+
+<div class="review fade-in">
+<div class="stars">⭐⭐⭐⭐⭐ 5/5</div>
+<p>"Convenient WhatsApp ordering, friendly service, and accurate orders every time. Keep it up!"</p>
+<h4>- Mohit Verma</h4>
+</div>
+
+<div class="review fade-in">
+<div class="stars">⭐⭐⭐⭐⭐ 5/5</div>
+<p>"Great quality, best prices in the area, and super quick delivery. Best place to order groceries."</p>
+<h4>- Anjali Sharma</h4>
+</div>
+
+</div>
+
+</section>
+
+<section class="section contact" id="contact">
+
+<h2 class="title" style="color:white">Contact Us & Visit</h2>
+
+<div class="contact-box">
+
+<div>
+<h3>📍 Store Address</h3>
+<p>Shop No. 4, Main Market Road</p>
+<p>Bhankrota, Jaipur</p>
+<p>Rajasthan 302026</p>
+</div>
+
+<div>
+<h3>📞 Get In Touch</h3>
+<p>Phone: <strong>+91 96609 85841</strong></p>
+<p>Email: orders@radhageneralstore.com</p>
+<p>Available: 08:00 AM – 09:30 PM (Every Day)</p>
+</div>
+
+<div>
+<h3>🎯 Why Order With Us</h3>
+<p>✓ 1000+ Products Available</p>
+<p>✓ Same Day Delivery</p>
+<p>✓ Best Prices Guaranteed</p>
+<p>✓ Easy Online Ordering</p>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+<p>© 2026 Radha General Store & Kirana | Grocery Delivery Jaipur | All Rights Reserved</p>
+<p>Serving the community with quality groceries since 2020 | Follow us on WhatsApp for daily offers</p>
+</footer>
+
+<div class="whatsapp" onclick="redirectToWhatsApp()">
+📲 Order On WhatsApp
+</div>
+
+<script>
+
+function redirectToWhatsApp(){
+const phoneNumber="919660985841";
+const message=encodeURIComponent("Hello Radha General Store! I want to order groceries. Please send me the product list and prices.");
+window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+}
+
+// Scroll animations
+const observerOptions = {
+threshold: 0.1,
+rootMargin: '0px 0px -100px 0px'
+};
+
+const observer = new IntersectionObserver(function(entries) {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.classList.add('visible');
+}
+});
+}, observerOptions);
+
+document.querySelectorAll('.fade-in').forEach(element => {
+observer.observe(element);
+});
+
+</script>
+
+</body>
+</html>
